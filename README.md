@@ -1,4 +1,4 @@
-# Memorization-and-Privacy-in-Deep-Learning
+# Memorization and Privacy in Deep Learning
 
 In 2015, a Kaggle competition was launched, challenging participants to create 10,000 images of dogs using a deep learning model trained on nearly 30,000 real dog images [1]. To assess the quality of the generated images, the competition organizers introduced a new evaluation metric. This metric, named the Memorization-Informed Fréchet Inception Distance (MiFID) [2], builds upon the traditional Fréchet Inception Distance by incorporating a memorization factor. This factor evaluates the degree to which the generated images resemble the training dataset, considering both intentional and unintentional memorization by the generative model. Citing the authors:
 

@@ -17,14 +17,12 @@ The DCGAN cannot be constructe using Batch-Normalization layers, as it is not po
 ## Results
 With the [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset, we obtained
 
-  MiFID non private = 2460
-  ----------------------
-  FID non private = 1.58
-  ----------------------
-  MiFID private = 535
-  ----------------------
-  FID private = 4.80
-  ----------------------
+| Metric | Non-Private | Private |
+|--------|-------------|---------|
+| MiFID  | 2460        | 535     |
+| FID    | 1.58        | 4.80    |
+
+  
 The findings indicate that the non-private model produces higher-quality images, demonstrated by a superior FID score. However, the private model exhibits reduced data memorization, as evidenced by its lower MiFID. Therefore, if minimizing memorization is the main goal, employing differential privacy is a viable strategy.
 
 ### Hyperparameters

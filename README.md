@@ -15,7 +15,7 @@ For Deep Learning or in generale Machine Learning, the techniqued used to privat
 The DCGAN cannot be constructe using Batch-Normalization layers, as it is not possible to add noise on the gradients. I implemeneted GroupNormalization layers instead.
 
 ## Results
-With the [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset, we obtained
+With the [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) dataset, I obtained
 
 | Metric | Non-Private | Private |
 |--------|-------------|---------|

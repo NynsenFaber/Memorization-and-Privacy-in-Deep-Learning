@@ -7,19 +7,16 @@ In 2015, a Kaggle competition was launched, challenging participants to create 1
 Indeed, traditional metrics can be manipulated by encouraging memorization. For instance, one could simply train a GAN's discriminator solely on real data and then use it to evaluate the generator's performance. This approach bypasses the typical minimax game between the generator and discriminator, allowing for an easier assessment of quality based solely on memorization of the real dataset. However, this metric can also detect unintentional memorization: citing again the authors "*unintentional memorization is a serious and common issue in popular generative models*". So what can be done? Well, memorization is also a matter of privacy, then my initial thought was, **what happens if I apply differential privacy?**
 
 ## Differential Private in Deep Learning
-Differential privacy is a mathematical definition of privacy based on statistical indistinguishability. The two parameters are $\epsilon$
+Differential privacy is a mathematical definition of privacy based on statistical indistinguishability [3]. The two parameters are $\varepsilon>0$ and $\delta\in[0,1]$ and the closer the are to zero the more the algorithm is private. In a few words, an algorithm (randomized) applied to a dataset $X$ is private if its output is $(\varepsilon, \delta)$-indistinguishable by any other possible output obtained from a neighboring dataset $X'$ differing in one user form $X$. So the key concept is **we can render things private by adding noise or in general randomization**.
 
-
-
-
-
-
-
-
-
+For Deep Learning or in generale Machine Learning, the techniqued used to privately train a model is by using **Differential Private Stochastic Gradient Descent (DP-SDG)** [4]. It basically consists in adding controlled Gaussian noise to each gradient during the training. In this project I decided to train a DCGAN privately using Opacus, a library based on PyTorch that allows an easy implementation of DP-SGD.
 
 
 # References
 [1] OlgaRussakovsky,JiaDeng,HaoSu,JonathanKrause,SanjeevSatheesh,Sean Ma, Zhiheng Huang, Andrej Karpathy, Aditya Khosla, Michael Bernstein, et al. 2015. Imagenet large scale visual recognition challenge. International journal of computer vision 115, 3 (2015).
 
 [2] Bai, Ching-Yuan, et al. "On training sample memorization: Lessons from benchmarking generative modeling with a large-scale competition." Proceedings of the 27th ACM SIGKDD Conference on Knowledge Discovery & Data Mining. 2021.
+
+[3] Dwork, Cynthia, and Aaron Roth. "The algorithmic foundations of differential privacy." Foundations and Trends® in Theoretical Computer Science 9.3–4 (2014): 211-407.
+
+[4] Abadi, Martin, et al. "Deep learning with differential privacy." Proceedings of the 2016 ACM SIGSAC conference on computer and communications security. 2016.
